@@ -14,7 +14,7 @@
 
 ---
 
-## 🔌 Device Table
+## Device Table
 
 | Hostname | IP Address | Role | Port |
 |----------|-----------|------|------|
@@ -31,7 +31,7 @@
 
 ---
 
-## 🏷️ VLAN Schema (TP-Link TL-SG105E)
+## VLAN Schema (TP-Link TL-SG105E)
 
 | VLAN ID | Name | Purpose |
 |---------|------|---------|
@@ -50,7 +50,7 @@
 
 ---
 
-## 🗺️ Network Diagram
+## Network Diagram
 
 ```
 Internet
@@ -66,5 +66,5 @@ TL-SG105E Switch (192.168.1.28)
 my-cluster
 ├── alpha  ── 1 vote
 ├── beta   ── 1 vote
-└── QDevice── 1 vote  →  Quorum = 2/3 ✅
+└── QDevice── 1 vote  →  Quorum = 2/3
 ```

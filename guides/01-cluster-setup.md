@@ -1,4 +1,4 @@
-# 🛠️ Setup Guide
+# Setup Guide
 
 Step-by-step documentation of the home lab build process.
 
@@ -104,12 +104,12 @@ pvecm status
 
 ---
 
-## ✅ Result
+## Result
 
 ```
 Cluster: my-cluster
 Nodes:   2 (alpha + beta)
 QDevice: Raspberry Pi (192.168.1.3)
 Votes:   3 total, quorum = 2
-Status:  Quorate ✅
+Status:  Quorate
 ```
