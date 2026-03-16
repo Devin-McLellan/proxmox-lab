@@ -11,7 +11,7 @@ Install Proxmox VE on both nodes from the official ISO.
 - **alpha.local** → IP: `192.168.1.71`
 - **beta.local** → IP: `192.168.1.70`
 
-> Access the web UI at `https://<node-ip>:8006`
+Access the web UI at `https://<node-ip>:8006`
 
 ---
 
