@@ -1,4 +1,4 @@
-# 🌐 Network Plan
+# Network Plan
 
 ## IP Range: 192.168.1.0/24
 
@@ -23,10 +23,10 @@
 | raspberrypi | 192.168.1.3 | QDevice (Quorum) | – |
 | TL-SG105E | 192.168.1.28 | Managed Switch | – |
 | main_computer | 192.168.1.27 | Workstation | – |
-| DC01 | 192.168.1.10 | Domain Controller | – |
-| DC02 | 192.168.1.11 | Domain Controller (backup) | – |
-| DHCP01 | 192.168.1.20 | DHCP Server | – |
-| DHCP02 | 192.168.1.21 | DHCP Server (backup) | – |
+| DC01 | 192.168.1.10 | Domain Controller (Primary) | – |
+| DC02 | 192.168.1.11 | Domain Controller (Backup) | – |
+| DHCP01 | 192.168.1.20 | DHCP Server (Primary) | – |
+| DHCP02 | 192.168.1.21 | DHCP Server (Backup) | – |
 | FS01 | 192.168.1.30 | File Server | – |
 
 ---
@@ -66,5 +66,5 @@ TL-SG105E Switch (192.168.1.28)
 my-cluster
 ├── alpha  ── 1 vote
 ├── beta   ── 1 vote
-└── QDevice── 1 vote  →  Quorum = 2/3
+└── QDevice── 1 vote  →  Quorum = 2/3 
 ```
