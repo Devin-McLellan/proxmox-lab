@@ -48,10 +48,10 @@
 | 192.168.1.71 | alpha.local (Proxmox) |
 | 192.168.99.70 | beta.local (Heartbeat) |
 | 192.168.99.71 | alpha.local (Heartbeat) |
-| 192.168.10.10â19 | Domain Controllers |
-| 192.168.10.20â29 | DHCP Servers |
-| 192.168.10.30â39 | File Servers |
-| 192.168.10.128â254 | DHCP client range |
+| 192.168.10.10-19 | Domain Controllers |
+| 192.168.10.20-29 | DHCP Servers |
+| 192.168.10.30-39 | File Servers |
+| 192.168.10.128-254 | DHCP client range |
 
 ## Cluster Quorum
 
