@@ -28,10 +28,12 @@ proxmox-lab/
 ## Progress
 
 - [x] Proxmox VE installed on both nodes
-- [x] VLAN configuration on TP-Link switch
+- [x] VLAN configuration on TP-Link switch (VLAN 10, 20, 99 with proper tagged/untagged ports)
 - [x] Proxmox cluster created (my-cluster)
 - [x] beta.local joined the cluster
 - [x] Raspberry Pi configured as QDevice
+- [x] Network interfaces configured (nic0.20/vmbr20 for Lab, nic0.99/vmbr99 for Heartbeat)
+- [x] Corosync heartbeat migrated to VLAN 99 (192.168.99.x)
 - [ ] Create Domain Controllers (DC01, DC02)
 - [ ] Create DHCP servers (DHCP01, DHCP02)
 - [ ] Create File Server (FS01)
