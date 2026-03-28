@@ -1,28 +1,56 @@
-# Setup Guide
+# Guide 02 â VLAN Switch Configuration (TP-Link TL-SG105E)
 
-Step by step documentation from when I installed my Network switch
+## Tool
+Configure using **Easy Smart Configuration** (TP-Link utility).
 
-## Step 1
+## Physical Port Mapping
 
-Connect cables according to: 
+| Port | Device |
+|------|--------|
+| 1 | Router (internet uplink) |
+| 2 | Workstation |
+| 3 | alpha.local |
+| 4 | beta.local |
+| 5 | Raspberry Pi (QDevice) |
 
-TL-SG105E Switch (192.168.1.28)
-    ├── Port 1 ──► Router          (192.168.1.1)
-    ├── Port 2 ──► Workstation     (192.168.1.27)
-    ├── Port 3 ──► alpha.local     (192.168.1.71)
-    ├── Port 4 ──► beta.local      (192.168.1.70)
-    └── Port 5 ──► RPi QDevice     (192.168.1.3)
+## 802.1Q VLAN Configuration
 
----
+### VLAN 10 â Management
+| Port | Member Type |
+|------|-------------|
+| 1 | Untagged |
+| 2 | Untagged |
+| 3 | Untagged |
+| 4 | Untagged |
+| 5 | Untagged |
 
-** Using the tool Easy Smart Configuration when configurating TP-link switch.
+### VLAN 20 â Lab
+| Port | Member Type |
+|------|-------------|
+| 3 | Tagged |
+| 4 | Tagged |
+| All others | Not Member |
 
-```
+### VLAN 99 â Heartbeat
+| Port | Member Type |
+|------|-------------|
+| 3 | Tagged |
+| 4 | Tagged |
+| All others | Not Member |
 
-**Using the following VLAN-config: 
+## PVID Settings
 
-VLAN: 10 (LAN) and 99 (HEARTBEATS)
-VLAN 10: Member port 1-4, untagged ports 1-4
-VLAN 99: Member port 3-4, tagged ports 3-4
+| Port | PVID |
+|------|------|
+| 1 | 10 |
+| 2 | 10 |
+| 3 | 10 |
+| 4 | 10 |
+| 5 | 10 |
 
-```
+> PVID determines which VLAN untagged traffic belongs to. All ports use VLAN 10 as default since management traffic is untagged.
+
+## Why Tagged vs Untagged?
+
+- **Untagged**: The device does not know about VLANs (router, workstation, RPi). Switch handles VLAN assignment transparently.
+- **Tagged**: The device (Proxmox) understands VLAN tags and sorts traffic to the correct bridge (vmbr0, vmbr20, vmbr99).
