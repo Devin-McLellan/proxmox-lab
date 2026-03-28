@@ -1,4 +1,4 @@
-# Guide 02 â VLAN Switch Configuration (TP-Link TL-SG105E)
+# Guide 02 - VLAN Switch Configuration (TP-Link TL-SG105E)
 
 ## Tool
 Configure using **Easy Smart Configuration** (TP-Link utility).
