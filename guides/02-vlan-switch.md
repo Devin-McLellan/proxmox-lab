@@ -15,7 +15,7 @@ Configure using **Easy Smart Configuration** (TP-Link utility).
 
 ## 802.1Q VLAN Configuration
 
-### VLAN 10 â Management
+### VLAN 10 - Management
 | Port | Member Type |
 |------|-------------|
 | 1 | Untagged |
@@ -24,14 +24,14 @@ Configure using **Easy Smart Configuration** (TP-Link utility).
 | 4 | Untagged |
 | 5 | Untagged |
 
-### VLAN 20 â Lab
+### VLAN 20 - Lab
 | Port | Member Type |
 |------|-------------|
 | 3 | Tagged |
 | 4 | Tagged |
 | All others | Not Member |
 
-### VLAN 99 â Heartbeat
+### VLAN 99 - Heartbeat
 | Port | Member Type |
 |------|-------------|
 | 3 | Tagged |
