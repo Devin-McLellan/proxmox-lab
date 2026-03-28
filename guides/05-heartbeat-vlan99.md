@@ -1,4 +1,4 @@
-# Guide 05 â Heartbeat Network (VLAN 99 / Corosync)
+# Guide 05 - Heartbeat Network (VLAN 99 / Corosync)
 
 ## Overview
 
