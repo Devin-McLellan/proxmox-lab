@@ -9,7 +9,7 @@ By default, Corosync uses the management network (VLAN 10) for cluster heartbeat
 - Mirrors production cluster design
 - Dedicated, reliable path for cluster health checks
 
-## Step 1 â Create Network Interfaces (both nodes)
+## Step 1 - Create Network Interfaces (both nodes)
 
 On each Proxmox node via **System â Network**:
 
@@ -33,7 +33,7 @@ Click **Apply Configuration** on both nodes.
 ping 192.168.99.70
 ```
 
-## Step 2 â Update Corosync Configuration
+## Step 2 - Update Corosync Configuration
 
 On **alpha**, edit the config:
 ```bash
