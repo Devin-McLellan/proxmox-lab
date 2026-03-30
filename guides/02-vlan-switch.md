@@ -1,9 +1,12 @@
 # Guide 02 - VLAN Switch Configuration (TP-Link TL-SG105E)
 
-## Tool
-Configure using **Easy Smart Configuration** (TP-Link utility).
+Step by step documentation from when I configured the TP-Link TL-SG105E switch for the Proxmox cluster.
 
-## Physical Port Mapping
+## Configuration Tool
+
+Configure using **TP-Link Easy Smart Configuration** (TP-Link utility) via `http://192.168.1.28`.
+
+## Cable Layout / Physical Port Mapping
 
 | Port | Device |
 |------|--------|
@@ -14,6 +17,10 @@ Configure using **Easy Smart Configuration** (TP-Link utility).
 | 5 | Raspberry Pi (QDevice) |
 
 ## 802.1Q VLAN Configuration
+
+Two VLANs configured to separate management traffic from cluster heartbeat traffic.
+
+**Why VLAN 99 is isolated:** Corosync heartbeat must be separated from LAN to prevent false split-brain scenarios in the Proxmox cluster.
 
 ### VLAN 10 - Management
 | Port | Member Type |
@@ -49,6 +56,16 @@ Configure using **Easy Smart Configuration** (TP-Link utility).
 | 5 | 10 |
 
 > PVID determines which VLAN untagged traffic belongs to. All ports use VLAN 10 as default since management traffic is untagged.
+
+## Step-by-Step Configuration
+
+1. Open `http://192.168.1.28` in a browser
+2. Navigate to **VLAN → 802.1Q VLAN**
+3. Create VLAN 10 (Management) – ports 1–5 untagged
+4. Create VLAN 20 (Lab) – ports 3–4 tagged
+5. Create VLAN 99 (Heartbeat) – ports 3–4 tagged
+6. Navigate to **VLAN → 802.1Q PVID Setting**
+7. Set PVID 10 on ports 1–5
 
 ## Why Tagged vs Untagged?
 
