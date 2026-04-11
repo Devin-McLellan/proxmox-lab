@@ -1,5 +1,57 @@
 # Changelog — Proxmox Home Lab
 
+## 2026-04-11 — Network Foundation & OPNsense
+
+### VLAN Architecture
+
+- Dokumenterat VLAN-design: VLAN 10 (Management), VLAN 20 (Lab), VLAN 99 (Heartbeat)
+- Dokumenterat TP-Link TL-SG105E portkonfiguration (trunk-portar för alpha/beta, untagged för workstation/RPi)
+- Verifierat Proxmox nätverksgränssnitt: vmbr0/20/99 aktiva på båda noder
+
+### OPNsense VM (ID: 200)
+
+**Mål:** Installera router/firewall för VLAN 20 — nödvändig innan domain controllers kan konfigureras.
+
+**Vad som gjordes:**
+
+- Skapat VM på alpha: 2c/2GB/16GB, SeaBIOS, i440fx
+  - net0 (WAN): vmbr0 — kopplad till fysiska routern
+  - net1 (LAN): vmbr20 — gateway för VLAN 20
+- Installerat OPNsense 26.1.2 via konsol (ZFS, Stripe, da0)
+- Tilldelat interfaces: WAN=vtnet0, LAN=vtnet1
+- Konfigurerat LAN-IP: `10.20.0.1/24`
+- Aktiverat DHCP-pool: `10.20.0.100–200`
+- Slutfört Web GUI Wizard:
+  - Hostname: OPNsense, Domain: lab.local, Timezone: Europe/Stockholm
+  - Block RFC1918: avmarkerat (krävs för privat LAN-subnät)
+
+**WAN:** DHCP från router → `192.168.1.32`
+
+**Felsökning:**
+
+| Problem | Lösning |
+|---|---|
+| Kunde inte nå GUI på 10.20.0.1 från VLAN 10 | `pfctl -d` + `route add 10.20.0.0 mask 255.255.255.0 192.168.1.32` på Windows |
+| Block RFC1918 blockerade trafik | Avmarkerat i wizard |
+
+### Repo-uppdateringar
+
+- `network/vlan-design.md` — VLAN-design och switch-portkonfiguration
+- `guides/opnsense-setup.md` — Installationsguide för OPNsense
+- `guides/sessions/` — Ny katalogstruktur för kvällssessioner
+- `guides/sessions/2026-04-11-network-opnsense.md` — Session 01-logg
+- `vms/opnsense.md` — VM-spec för OPNsense (VM 200)
+- `CLAUDE.md` — Uppdaterad med fullständig projektkontext
+
+### Nästa steg
+
+- [ ] Reservera statisk WAN-IP (192.168.1.30) i routern
+- [ ] Konfigurera permanent firewall-regel: VLAN 10 → VLAN 20
+- [ ] Slutföra DC01 — AD DS-installation och konfiguration
+- [ ] Kursmoment 5: Windows Server 2025 & Active Directory
+
+---
+
 ## 2026-03-30 — WireGuard VPN & DuckDNS Setup
 
 ### WireGuard VPN
