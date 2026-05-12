@@ -6,24 +6,30 @@ Planned VMs to be deployed on the Proxmox cluster.
 
 ## VM Overview
 
-| VM ID | Hostname | IP | OS | Role | Node |
-|-------|----------|----|----|------|------|
-| 101 | DC01 | 192.168.1.10 | Windows Server / Samba | Domain Controller (Primary) | alpha |
-| 102 | DC02 | 192.168.1.11 | Windows Server / Samba | Domain Controller (Backup) | beta |
-| 201 | DHCP01 | 192.168.1.20 | Linux | DHCP Server (Primary) | alpha |
-| 202 | DHCP02 | 192.168.1.21 | Linux | DHCP Server (Backup) | beta |
-| 301 | FS01 | 192.168.1.30 | Linux | File Server | alpha |
+| VM ID | Hostname | IP | OS | Role | Node | Status |
+|-------|----------|----|----|------|------|--------|
+| 100 | DC01 | 10.20.0.10 | Windows Server 2025 | Domain Controller (Primary) | alpha | Built, AD DS pending |
+| 103 | Client01 | 10.20.0.x (DHCP) | Windows 11 25H2 | Management workstation / personal projects | alpha | Created, OS install pending |
+| 200 | OPNsense | LAN: 10.20.0.1 | OPNsense 26.1.2 | Router/firewall | alpha | Running, config pending |
+| — | DC02 | 10.20.0.11 | Windows Server 2025 | Domain Controller (Backup) | beta | Planned |
+| — | FS01 | 10.20.0.30 | Windows Server | File Server | alpha | Planned |
+| — | Ubuntu01 | 10.20.0.x | Ubuntu 24.04 | Docker host | beta | Planned |
+| — | Wazuh | 10.20.0.x | Ubuntu | SIEM + EDR | beta | Planned |
+| — | Ollama | 10.20.0.x | Ubuntu | Local LLM for AI security labs | beta | Planned |
 
 ---
 
 ## Deployment Order
 
 ```
-1. DC01  – Primary domain controller, DNS
-2. DC02  – Backup domain controller
-3. DHCP01 – Primary DHCP
-4. DHCP02 – Backup DHCP
-5. FS01  – File server (joined to domain)
+1. OPNsense  – Router/firewall (done, final config pending)
+2. DC01      – Primary domain controller, DNS
+3. Client01  – Management workstation
+4. DC02      – Backup domain controller
+5. FS01      – File server (joined to domain)
+6. Ubuntu01  – Docker host
+7. Wazuh     – SIEM + EDR
+8. Ollama    – AI security labs
 ```
 
 ---

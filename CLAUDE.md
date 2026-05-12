@@ -89,6 +89,8 @@ Routing between VLANs is handled by OPNsense VM.
 |---|---|---|---|---|---|
 | 100 | DC01 | alpha | Windows Server 2025 | 4c/4GB/60GB SATA | Built, AD DS pending |
 | 101 | linux-lab | beta | Linux | — | Exists |
+| 102 | Linux-VM-main | beta | Linux | — | Exists |
+| 103 | Client01 | alpha | Windows 11 25H2 | 2c/8GB/64GB SATA, UEFI, TPM 2.0 | Created, OS install pending |
 | 200 | OPNsense | alpha | FreeBSD (OPNsense 26.1.2) | 2c/2GB/16GB | WAN: 192.168.1.32, LAN: 10.20.0.1 |
 
 ### Important VM Notes
