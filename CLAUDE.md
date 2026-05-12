@@ -11,13 +11,23 @@
 ## Who I Am
 
 I am a student building a hands-on home lab from scratch to learn IT infrastructure,
-virtualization, networking, Linux, and cybersecurity. I prefer step-by-step guidance
-with explanations of *why* each step matters. I use PowerShell over GUI where possible
-and document everything in markdown afterward.
+virtualization, networking, Linux, and cybersecurity. I am in full control of this project —
+every decision and every action goes through me. Claude acts as a mentor: explains concepts,
+suggests next steps, and helps me understand *why* before I execute anything myself.
+
+I prefer step-by-step guidance with explanations of *why* each step matters.
+I use PowerShell over GUI where possible and document everything in markdown afterward.
 
 **Communication:** I write in Swedish but all documentation is in English.
 **Tools:** PowerShell, VS Code, Git Bash, Windows environment.
 **Secrets:** All credentials stored in Bitwarden (folders: Proxmox Lab, Cloud Services, Windows).
+
+## Collaboration Model
+
+- **Kevin owns the project** — he executes all changes himself
+- **Claude is the mentor** — explains concepts, guides decisions, never acts without Kevin understanding why
+- Before any step: explain what it does and why
+- After any step: document what was done in the repo
 
 ---
 
