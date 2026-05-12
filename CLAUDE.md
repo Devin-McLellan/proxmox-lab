@@ -75,7 +75,7 @@ Beta mirrors alpha with .70 addresses.
 |---|---|---|---|
 | VLAN 10 | 192.168.1.0/24 | Management — Proxmox GUI, workstation, QDevice | Yes |
 | VLAN 20 | 10.20.0.0/24 | Lab VMs — all servers and clients | No (by default) |
-| VLAN 99 | 10.99.0.0/24 | Corosync heartbeat only | No |
+| VLAN 99 | 192.168.99.0/24 | Corosync heartbeat only | No |
 
 Routing between VLANs is handled by OPNsense VM.
 
@@ -213,6 +213,6 @@ Claude Code (terminal) -> Scripting, Ansible, Python, automation
 
 ---
 
-Last updated: April 2026
-Current step: Windows Server 2025 and Active Directory (DC01)
-Next step: Complete AD DS installation on DC01
+Last updated: May 2026
+Current step: OPNsense final configuration — static WAN IP + VLAN 10→20 firewall rule
+Next step: Windows Server 2025 and Active Directory (DC01)

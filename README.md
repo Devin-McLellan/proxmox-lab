@@ -20,7 +20,7 @@ Enterprise-grade two-node Proxmox VE homelab built to develop skills in Detectio
 |------|--------|---------|
 | VLAN 10 | 192.168.1.0/24 | Management — Proxmox GUI, workstation |
 | VLAN 20 | 10.20.0.0/24 | Lab VMs — all servers and clients |
-| VLAN 99 | 10.99.0.0/24 | Corosync heartbeat only |
+| VLAN 99 | 192.168.99.0/24 | Corosync heartbeat only |
 
 Routing between VLANs is handled by OPNsense VM (VM 200).
 
@@ -49,7 +49,8 @@ proxmox-lab/
 - [x] Raspberry Pi configured as QDevice
 - [x] Corosync heartbeat on VLAN 99 (vmbr99)
 - [x] WireGuard VPN + DuckDNS (kevins-proxmox.duckdns.org)
-- [ ] OPNsense VM — router/firewall for VLAN 20 ← **current**
+- [x] Proxmox bridges (vmbr0/20/99) on both nodes
+- [ ] OPNsense VM — final configuration (static WAN IP + firewall rules) ← **current**
 - [ ] Domain Controllers (DC01, DC02)
 - [ ] DHCP / File Server
 - [ ] Ansible automation
@@ -65,7 +66,7 @@ proxmox-lab/
 1. ✅ Access Proxmox Management Interface
 2. ✅ Lab Architecture & Network Design
 3. ✅ Download & Upload ISO images
-4. ⏳ OPNsense installation and configuration ← **current**
+4. ⏳ OPNsense — final configuration (static WAN IP + firewall rules) ← **current**
 5. ⏳ Windows Server 2025 & Active Directory (DC01)
 6. ⏳ Service Accounts, SPNs, Network Shares
 7. ⏳ Windows 10 & Domain Join

@@ -15,7 +15,7 @@
 | VLAN | Name | Subnet | Purpose |
 |------|------|--------|---------|
 | 10 | Management | 192.168.1.0/24 | Proxmox web UI, workstation, RPi |
-| 20 | Lab | 192.168.10.0/24 | All VMs (DC01, DC02, DHCP, FS, Ubuntu) |
+| 20 | Lab | 10.20.0.0/24 | All VMs (DC01, DC02, DHCP, FS, Ubuntu) |
 | 99 | Heartbeat | 192.168.99.0/24 | Corosync cluster communication |
 
 ## Switch Port Configuration (TP-Link TL-SG105E)
@@ -48,10 +48,11 @@
 | 192.168.1.71 | alpha.local (Proxmox) |
 | 192.168.99.70 | beta.local (Heartbeat) |
 | 192.168.99.71 | alpha.local (Heartbeat) |
-| 192.168.10.10-19 | Domain Controllers |
-| 192.168.10.20-29 | DHCP Servers |
-| 192.168.10.30-39 | File Servers |
-| 192.168.10.128-254 | DHCP client range |
+| 10.20.0.1 | OPNsense (gateway for VLAN 20) |
+| 10.20.0.10-19 | Domain Controllers |
+| 10.20.0.20-29 | DHCP Servers |
+| 10.20.0.30-39 | File Servers |
+| 10.20.0.100-200 | DHCP client range (OPNsense pool) |
 
 ## Cluster Quorum
 
