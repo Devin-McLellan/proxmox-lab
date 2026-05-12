@@ -31,7 +31,7 @@ Connected to VLAN 20 — accesses other lab VMs via OPNsense routing.
 | Task                          | Status      |
 |-------------------------------|-------------|
 | VM created in Proxmox         | ✅ Done     |
-| Windows 11 installed          | ⏳ Pending  |
+| Windows 11 installed          | ✅ Done     |
 | VirtIO drivers installed      | ⏳ Pending  |
 | Domain joined (lab.local)     | ⏳ Pending  |
 
