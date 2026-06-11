@@ -5,7 +5,7 @@
 
 **Domainname: home.arpa**
 
-**Username: kevin***
+**Username: kevin**
 
-**IP-adress: 192.168.1.53/24
+**IP-adress: 192.168.1.53/24**
 
