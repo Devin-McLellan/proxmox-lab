@@ -6,7 +6,7 @@
 |------|-----------------|-------------------------------|----------|
 | 10   | 192.168.1.0/24  | Management (Proxmox, PC, RPi) | Ja       |
 | 20   | 10.20.0.0/24    | Lab VMs (isolerat)            | Nej      |
-| 30   | 10.20.0.0/24    | Production VLAN (DC01/DC02/fileserver|Yes|
+| 30   | 10.20.0.0/24    | Production VLAN (DC01/DC02/fileserver|No|
 | 99   | 10.99.0.0/24    | Corosync heartbeat            | Nej      |
 
 ## TP-Link TL-SG105E — Portkonfiguration
