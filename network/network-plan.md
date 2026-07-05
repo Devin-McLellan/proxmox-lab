@@ -5,7 +5,7 @@
 | Device | Port | IP | VLAN |
 |--------|------|----|------|
 | Router/Gateway | Port 1 | 192.168.1.1 | 10 (untagged) |
-| Workstation | Port 2 | 192.168.1.x | 10 (untagged) |
+| Workstation | Port 2 | 192.168.1.7 | 10 (untagged) |
 | alpha.local | Port 3 | 192.168.1.71 | 10 (untagged), 20 (tagged), 99 (tagged) |
 | beta.local | Port 4 | 192.168.1.70 | 10 (untagged), 20 (tagged), 99 (tagged) |
 | Raspberry Pi (QDevice) | Port 5 | 192.168.1.3 | 10 (untagged) |
@@ -16,11 +16,13 @@
 |------|------|--------|---------|
 | 10 | Management | 192.168.1.0/24 | Proxmox web UI, workstation, RPi |
 | 20 | Lab | 10.20.0.0/24 | All VMs (DC01, DC02, DHCP, FS, Ubuntu) |
+| 30 | Production | 10.30.0.0/24 | All VMs (DC01, DC02, DHCP, FS, Ubuntu) |
+| 40 | SOC | 10.40.0.0/24 | SIEM (Wazuh/Suricata) |
 | 99 | Heartbeat | 192.168.99.0/24 | Corosync cluster communication |
 
 ## Switch Port Configuration (TP-Link TL-SG105E)
 
-| Port | PVID | VLAN 10 | VLAN 20 | VLAN 99 |
+| Port | PVID | VLAN 10 | VLAN 20 | VLAN 30 | VLAN 40  | VLAN 99 |
 |------|------|---------|---------|---------|
 | 1 (Router) | 10 | Untagged | Not Member | Not Member |
 | 2 (Workstation) | 10 | Untagged | Not Member | Not Member |
