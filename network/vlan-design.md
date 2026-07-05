@@ -6,6 +6,7 @@
 |------|-----------------|-------------------------------|----------|
 | 10   | 192.168.1.0/24  | Management (Proxmox, PC, RPi) | Ja       |
 | 20   | 10.20.0.0/24    | Lab VMs (isolerat)            | Nej      |
+| 30   | 10.20.0.0/24    | Production VLAN (DC01/DC02/fileserver|Yes|
 | 99   | 10.99.0.0/24    | Corosync heartbeat            | Nej      |
 
 ## TP-Link TL-SG105E — Portkonfiguration
@@ -14,8 +15,8 @@
 |------|--------------|--------------------------------------------|
 | 1    | Router       | VLAN 10 untaggat                           |
 | 2    | Workstation  | VLAN 10 untaggat                           |
-| 3    | alpha.local  | Trunk: VLAN 10 untaggat, VLAN 20+99 taggat |
-| 4    | beta.local   | Trunk: VLAN 10 untaggat, VLAN 20+99 taggat |
+| 3    | alpha.local  | Trunk: VLAN 10 untaggat, VLAN 20+30+99 taggat |
+| 4    | beta.local   | Trunk: VLAN 10 untaggat, VLAN 20+99+30 taggat |
 | 5    | Raspberry Pi | VLAN 10 untaggat (PVID 10)                 |
 
 ## Proxmox Nätverksgränssnitt (per nod)
