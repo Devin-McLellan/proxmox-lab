@@ -35,8 +35,6 @@
 | Interface | Type | Bridge Port | IP | Purpose |
 |-----------|------|-------------|-----|---------|
 | vmbr0 | Linux Bridge | nic0 | 192.168.1.71 / .70 | Management (VLAN 10) |
-| nic0.20 | Linux VLAN | nic0 | - | VLAN 20 subinterface |
-| vmbr20 | Linux Bridge | nic0.20 | - | Lab VM network |
 | nic0.99 | Linux VLAN | nic0 | - | VLAN 99 subinterface |
 | vmbr99 | Linux Bridge | nic0.99 | 192.168.99.71 / .70 | Heartbeat (Corosync) |
 
