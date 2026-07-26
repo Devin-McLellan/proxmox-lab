@@ -18,8 +18,6 @@ Enterprise-grade two-node Proxmox VE homelab built to develop skills in Detectio
 
 | VLAN | Subnet | Purpose |
 |------|--------|---------|
-| VLAN 10 | 192.168.1.0/24 | Management — Proxmox GUI, workstation |
-| VLAN 20 | 10.20.0.0/24 | Lab VMs — all servers and clients |
 | VLAN 99 | 192.168.99.0/24 | Corosync heartbeat only |
 
 Routing between VLANs is handled by OPNsense VM (VM 200).
@@ -38,58 +36,6 @@ proxmox-lab/
 ├── configs/         # Raw config files
 └── journal/         # Lab session logs and learning notes
 ```
-
-## Progress
-
-### Infrastructure
-
-- [x] Proxmox VE 9.1.6 on both nodes
-- [x] VLAN 10/20/99 on TP-Link switch (tagged/untagged)
-- [x] Proxmox cluster (my-cluster) + beta.local joined
-- [x] Raspberry Pi configured as QDevice
-- [x] Corosync heartbeat on VLAN 99 (vmbr99)
-- [x] WireGuard VPN + DuckDNS (kevins-proxmox.duckdns.org)
-- [x] Proxmox bridges (vmbr0/20/99) on both nodes
-- [ ] OPNsense VM — final configuration (static WAN IP + firewall rules) ← **current**
-- [ ] Domain Controllers (DC01, DC02)
-- [ ] DHCP / File Server
-- [ ] Ansible automation
-
-### Cybersecurity
-
-- [ ] ADCS + ESC1 vulnerable certificate template (Certify.exe)
-- [ ] Wazuh SIEM/EDR
-- [ ] OWASP LLM Top 10 labs (Ollama + Suricata + LangChain)
-
-## Curriculum
-
-1. ✅ Access Proxmox Management Interface
-2. ✅ Lab Architecture & Network Design
-3. ✅ Download & Upload ISO images
-4. ⏳ OPNsense — final configuration (static WAN IP + firewall rules) ← **current**
-5. ⏳ Windows Server 2025 & Active Directory (DC01)
-6. ⏳ Service Accounts, SPNs, Network Shares
-7. ⏳ Windows 10 & Domain Join
-8. ⏳ Third Party Apps & Windows Server 2022
-9. ⏳ ADCS + ESC1 vulnerable certificate template
-10. ⏳ Ubuntu 24.04 & Docker
-11. ⏳ Web App via Docker Compose
-12. ⏳ Elasticsearch, Kibana & Log Shipping
-
-## AI Security
-
-OWASP LLM Top 10 (2025) homelab labs using Ollama, Wazuh, Suricata, ChromaDB, and OPNsense.
-See `security/` for individual lab writeups.
-
-**AI Stack:** Ollama + ChromaDB + LangChain + Wazuh, isolated in VLAN 20 behind OPNsense + Suricata IDS.
-
-## Key Learnings
-
-- VirtIO disk causes Windows install failure — always use SATA for Windows VMs
-- VirtIO NIC may not work on Windows — use E1000
-- `vmbr0` + VLAN tag 20 conflicts with `nic0.20` — use `vmbr20` directly for lab VMs
-- OPNsense must be deployed before domain controllers (provides DHCP + routing for VLAN 20)
-- QDevice requires wired connection for stable quorum
 
 ## Resources
 
