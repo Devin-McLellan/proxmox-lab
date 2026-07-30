@@ -2,7 +2,7 @@
 
 Enterprise-grade two-node Proxmox VE homelab built to develop skills in Detection Engineering, Security Engineering, and AI-powered cybersecurity.
 
-**Goal:** Cybersecurity Specialist at Combitech / Orange Cyberdefense.
+**Goal:** Cybersecurity Specialist role.
 **LIA (internship) target:** Autumn 2026.
 
 ## Infrastructure
@@ -10,9 +10,9 @@ Enterprise-grade two-node Proxmox VE homelab built to develop skills in Detectio
 | Component | Details |
 |-----------|---------|
 | **Cluster** | my-cluster (Proxmox VE 9.1.6) |
-| **Nodes** | alpha.local (192.168.1.71), beta.local (192.168.1.70) |
-| **Quorum** | Raspberry Pi QDevice (192.168.1.3) |
-| **Switch** | TP-Link TL-SG105E (192.168.1.28) |
+| **Nodes** | alpha.local, beta.local (management LAN) |
+| **Quorum** | Raspberry Pi QDevice (management LAN) |
+| **Switch** | TP-Link TL-SG105E (management LAN) |
 
 ## Network Design
 
